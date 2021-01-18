@@ -62,16 +62,20 @@ public class RouteManager {
     /**
      * Get internal trip list
      * @param route
-     * @param routeName
-     * @param distance
+     * @param pRouteName
+     * @param pDistance
      */
-    private void getInternalTrips(Route route, String routeName, Integer distance) {
+    private void getInternalTrips(Route route, String pRouteName, Integer pDistance) {
+        String routeName = pRouteName;
+        Integer distance = pDistance;
         tripList.put(routeName,distance);
         for (Route searchRoute : this.routeList) {
             if(route.getCityTo().equals(searchRoute.getCityFrom()) && !routeName.contains(searchRoute.getCityFrom()+searchRoute.getCityTo())) {
                 routeName = routeName + searchRoute.getCityTo();
                 distance = distance + searchRoute.getDistance();
                 getInternalTrips(searchRoute, routeName, distance);
+                routeName = pRouteName;
+                distance = pDistance;
             }
         }
     }

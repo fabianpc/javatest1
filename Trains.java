@@ -18,6 +18,6 @@ public class Trains {
         System.out.println(routeManager.getTripCounter("A","C", 4));
         System.out.println(routeManager.getShortDistance("A", "C"));
         System.out.println(routeManager.getShortDistance("B", "B"));
-        System.out.println(routeManager.getTripList("C", "C", 30));
+        System.out.println(routeManager.getTripList("C", "C", 30).stream().count());
     }
 }
