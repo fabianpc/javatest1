@@ -9,3 +9,5 @@ To run:
 ```shell
 $ java Trains
 ```
+#IDE
+Can use IntelliJ IDEA.
